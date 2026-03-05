@@ -29,128 +29,152 @@ import {
 const COURSES = [
   {
     id: 'intro',
-    title: 'Lab Safety & Policy',
+    title: 'Lab Safety & A1 Mini Overview',
     short: 'Safety',
     duration: '15 min',
-    description: 'Essential safety protocols, hazard identification, and lab etiquette.',
+    description: 'Essential safety protocols and introduction to the Bambu Lab A1 Mini printer.',
     icon: <ShieldCheck className="w-6 h-6" />,
     modules: [
       {
         title: 'Safety Fundamentals',
-        content: `Before using any equipment, you must understand the SparkLab environment.
-        - PPE (Personal Protective Equipment): Safety glasses are mandatory when machines are in motion.
-        - Hazard Areas: High-temperature zones (Nozzles, Heated Beds) and Chemical zones (Resin baths).
-        - Emergency Stop: Locate the Red E-Stop on the CNC and industrial units.
-        - Ventilation: Ensure extraction fans are ON when printing with ABS or Resin.`
+        content: `Before using the Bambu Lab A1 Mini, understand these safety essentials.
+        - Hot Surfaces: The nozzle reaches 300°C and the bed reaches 80°C. Never touch during or immediately after printing.
+        - Moving Parts: Keep hands, hair, and loose clothing away from the moving print head and bed.
+        - Ventilation: Print PLA in well-ventilated areas. For PETG or TPU, ensure proper airflow.
+        - Power Safety: Always use the included power adapter. Never unplug during a print.`
       },
       {
-        title: 'Lab Etiquette',
-        content: `A shared lab depends on mutual respect.
-        - Clean your station: Scraps go in the bin, tools go on the shadow board.
-        - Stay with your print: The first 3 layers are critical. Do not leave the lab until the base is stable.
-        - Report Failures: If a machine breaks, do not try to "fix" it yourself. Notify a SparkLab Mentor.`
+        title: 'A1 Mini Overview',
+        content: `The Bambu Lab A1 Mini is a compact, high-speed FDM printer perfect for beginners and pros.
+        - Build Volume: 180 x 180 x 180 mm — ideal for small to medium prints.
+        - Print Speed: Up to 500mm/s with 20,000 mm/s² acceleration.
+        - Auto Bed Leveling: Built-in Lidar and force sensor for perfect first layers every time.
+        - Connectivity: WiFi-enabled with Bambu Studio and Bambu Handy app support.`
       }
     ],
     quiz: {
-      question: "What should you do if your 3D print starts to peel off the bed in the first 10 minutes?",
+      question: "What is the maximum nozzle temperature of the Bambu Lab A1 Mini?",
       options: [
-        "Leave it and hope for the best.",
-        "Pause the print and notify a mentor or adjust bed leveling.",
-        "Push it down with your finger while it's moving.",
-        "Turn off the power immediately."
+        "200°C",
+        "250°C",
+        "300°C",
+        "350°C"
       ],
-      correct: 1
+      correct: 2
     }
   },
   {
     id: 'fdm',
-    title: 'FDM 3D Printing',
-    short: 'FDM Tech',
+    title: 'Operating the A1 Mini',
+    short: 'A1 Mini',
     duration: '25 min',
-    description: 'Learn to operate filament printers, slice files, and troubleshoot common issues.',
+    description: 'Learn to set up, load filament, and start your first print on the Bambu A1 Mini.',
     icon: <Box className="w-6 h-6" />,
     modules: [
       {
-        title: 'Machine Anatomy',
-        content: `Fused Deposition Modeling (FDM) melts plastic filament.
-        - The Extruder: The motor that pushes filament.
-        - The Hotend/Nozzle: Heats up to 260°C. Never touch during operation.
-        - The Build Plate: Can be heated. Keep it free of finger oils using IPA (Isopropyl Alcohol).`
+        title: 'Machine Components',
+        content: `Understanding your A1 Mini's key components.
+        - Hotend: All-metal design supporting temps up to 300°C for PLA, PETG, TPU, and PLA-CF.
+        - Textured PEI Build Plate: Flexible magnetic plate with excellent adhesion. No glue needed for PLA!
+        - Filament Spool Holder: Rear-mounted holder. Ensure filament feeds smoothly without tangles.
+        - Control Screen: Touchscreen for manual controls, calibration, and print monitoring.`
       },
       {
-        title: 'Slicing Basics',
-        content: `You don't send a 3D model directly; you send G-Code.
-        - STL/OBJ: Your 3D file formats.
-        - Slicer (e.g., Cura/PrusaSlicer): Cuts the model into layers.
-        - Parameters: Infill (strength), Supports (for overhangs), and Bed Adhesion (brims/rafts).`
+        title: 'Loading Filament',
+        content: `Follow these steps to load filament correctly.
+        - Step 1: Place your filament spool on the holder with the filament unwinding from the bottom.
+        - Step 2: Cut the filament tip at a 45° angle for smooth feeding.
+        - Step 3: On the touchscreen, go to Settings > Filament > Load and follow the prompts.
+        - Step 4: Wait for filament to extrude from the nozzle, confirming successful loading.`
+      },
+      {
+        title: 'Starting Your First Print',
+        content: `Ready to print? Here's the workflow.
+        - Send from Bambu Studio: Slice your model and click "Print" to send wirelessly to the A1 Mini.
+        - Auto-Calibration: The printer runs vibration compensation and bed leveling automatically.
+        - First Layer Check: Watch the first layer. It should be smooth and well-adhered to the bed.
+        - Monitor Progress: Use the touchscreen or Bambu Handy app to track print progress.`
       }
     ],
     quiz: {
-      question: "Which file format is standard for 3D printing slicer software?",
-      options: [".JPG", ".MP4", ".STL", ".DOCX"],
-      correct: 2
-    }
-  },
-  {
-    id: 'sla',
-    title: 'SLA Resin Printing',
-    short: 'SLA Tech',
-    duration: '20 min',
-    description: 'Master liquid resin printing, chemical safety, and post-processing workflows.',
-    icon: <Layers className="w-6 h-6" />,
-    modules: [
-      {
-        title: 'Chemical Safety',
-        content: `Resin is toxic in its liquid state.
-        - Gloves: Nitrile gloves MUST be worn at all times.
-        - No Skin Contact: If resin touches skin, wash immediately with soap and water (not IPA).
-        - Disposal: Used paper towels must be cured under UV before going in the trash.`
-      },
-      {
-        title: 'Post-Processing',
-        content: `SLA parts are "green" (soft) when they finish.
-        - Wash: 10-15 minutes in 99% Isopropyl Alcohol to remove excess resin.
-        - Cure: 5-30 minutes in a UV chamber to finalize the chemical bond.
-        - Support Removal: Wear eye protection; supports can snap and fly.`
-      }
-    ],
-    quiz: {
-      question: "What is the primary PPE required when handling liquid resin?",
-      options: ["Oven mitts", "Nitrile gloves and safety glasses", "A lab coat only", "None needed"],
+      question: "What angle should you cut the filament tip before loading?",
+      options: ["90° (flat)", "45° angle", "No cutting needed", "Round the tip"],
       correct: 1
     }
   },
   {
-    id: 'scanning',
-    title: '3D Scanning Tech',
-    short: 'Scanning',
-    duration: '15 min',
-    description: 'Capture physical objects as digital 3D models using laser and optical scanning.',
-    icon: <Maximize className="w-6 h-6" />,
+    id: 'slicer',
+    title: 'Bambu Studio Slicer',
+    short: 'Slicer',
+    duration: '20 min',
+    description: 'Master Bambu Studio to prepare and optimize your 3D models for printing.',
+    icon: <Layers className="w-6 h-6" />,
     modules: [
       {
-        title: 'Scanning Principles',
-        content: `Scanning uses 'Structured Light' or 'Lasers'.
-        - Lighting: Avoid direct sunlight or heavy shadows.
-        - Object Prep: Shiny, dark, or transparent objects need 'Scanning Spray' (chalk powder).
-        - Overlap: Ensure 30-50% overlap between frames for the software to "stitch" the model.`
+        title: 'Bambu Studio Basics',
+        content: `Bambu Studio is the official slicer for Bambu Lab printers.
+        - Download: Get it free from bambulab.com. Available for Windows, macOS, and Linux.
+        - Import Models: Drag and drop STL, OBJ, STEP, or 3MF files onto the build plate.
+        - Printer Selection: Select "Bambu Lab A1 Mini 0.4mm nozzle" from the printer dropdown.
+        - Filament Profile: Choose your filament type (PLA, PETG, etc.) for optimal settings.`
       },
       {
-        title: 'Mesh Cleanup',
-        content: `Raw scans are messy (point clouds).
-        - Watertight Mesh: The model must have no holes to be printable.
-        - Decimation: Reducing the polygon count so the file isn't too heavy for the slicer.`
+        title: 'Key Print Settings',
+        content: `Understanding the most important slicer settings.
+        - Layer Height: 0.2mm (standard) or 0.12mm (high detail). Affects print time and quality.
+        - Infill: 15% for decorative, 30% for functional, 50%+ for strong parts.
+        - Supports: Enable for overhangs over 45°. Use "tree supports" for easier removal.
+        - Brim/Raft: Add a brim for better bed adhesion on small or tall prints.`
+      },
+      {
+        title: 'Sending to Printer',
+        content: `Multiple ways to start your print.
+        - WiFi Direct: Click "Print" in Bambu Studio to send directly to your networked A1 Mini.
+        - SD Card: Export the .3mf file to a microSD card and insert into the printer.
+        - Bambu Handy: Send prints and monitor remotely from your smartphone.
+        - Print Preview: Always review the sliced preview to check for issues before printing.`
       }
     ],
     quiz: {
-      question: "How should you prepare a very shiny/reflective object for 3D scanning?",
-      options: [
-        "Polish it until it's even shinier.",
-        "Scan it in complete darkness.",
-        "Apply a matte scanning spray or talcum powder.",
-        "The scanner will handle it automatically."
-      ],
+      question: "What infill percentage is recommended for functional parts that need strength?",
+      options: ["5%", "15%", "30% or higher", "100%"],
       correct: 2
+    }
+  },
+  {
+    id: 'troubleshoot',
+    title: 'Troubleshooting & Tips',
+    short: 'Tips',
+    duration: '15 min',
+    description: 'Common issues, solutions, and pro tips for successful A1 Mini printing.',
+    icon: <Maximize className="w-6 h-6" />,
+    modules: [
+      {
+        title: 'Common Print Issues',
+        content: `How to identify and fix typical printing problems.
+        - First Layer Not Sticking: Clean the PEI plate with IPA. Ensure proper Z-offset calibration.
+        - Stringing: Increase retraction or lower print temperature by 5-10°C.
+        - Layer Shifting: Check belt tension and ensure the printer is on a stable surface.
+        - Under-Extrusion: Check for clogs, ensure correct filament diameter in slicer (1.75mm).`
+      },
+      {
+        title: 'Maintenance Best Practices',
+        content: `Keep your A1 Mini running smoothly.
+        - Clean the Bed: Wipe with IPA before each print. Deep clean with dish soap weekly.
+        - Check the Nozzle: Inspect for wear every 500 print hours. Replace if needed.
+        - Lubricate Rails: Apply light machine oil to linear rails every few months.
+        - Firmware Updates: Keep firmware updated via Bambu Studio for best performance.`
+      }
+    ],
+    quiz: {
+      question: "What should you use to clean the PEI build plate for better adhesion?",
+      options: [
+        "Water only",
+        "Isopropyl Alcohol (IPA)",
+        "Acetone",
+        "No cleaning needed"
+      ],
+      correct: 1
     }
   }
 ];
@@ -162,8 +186,8 @@ export default function App() {
   const [userProgress, setUserProgress] = useState({
     intro: false,
     fdm: false,
-    sla: false,
-    scanning: false
+    slicer: false,
+    troubleshoot: false
   });
   const [quizAnswer, setQuizAnswer] = useState(null);
   const [quizFeedback, setQuizFeedback] = useState("");
@@ -218,9 +242,7 @@ export default function App() {
       {/* Mobile Top Bar */}
       <header className="lg:hidden bg-white border-b border-slate-200 p-4 sticky top-0 z-50 flex justify-between items-center shadow-sm w-full">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-[#1E293B] rounded flex items-center justify-center">
-            <Zap className="text-[#3B82F6] w-5 h-5 fill-[#3B82F6]" />
-          </div>
+          <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="SparkLab" className="w-8 h-8" />
           <span className="font-bold text-lg text-[#1E293B]">SparkLab Academy</span>
         </div>
         <button onClick={() => setSidebarOpen(!sidebarOpen)} className="p-2 text-slate-600">
@@ -237,9 +259,7 @@ export default function App() {
         <div className="flex flex-col h-full">
           <div className="p-6">
             <div className="flex items-center gap-3 mb-10 px-2 pt-2">
-              <div className="w-9 h-9 bg-[#2563EB] rounded-lg flex items-center justify-center shadow-lg shadow-blue-600/20">
-                <Zap className="text-white w-5 h-5 fill-white" />
-              </div>
+              <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="SparkLab" className="w-9 h-9" />
               <div>
                 <h1 className="text-base font-bold leading-tight tracking-tight">SparkLab</h1>
                 <p className="text-[9px] text-blue-400 font-bold uppercase tracking-[0.25em] opacity-80">Tech Academy</p>
@@ -354,7 +374,7 @@ export default function App() {
             <div className="space-y-12 animate-in fade-in duration-500">
               <div className="space-y-4">
                 <div className="flex items-center gap-2 text-[#2563EB] font-black text-[10px] uppercase tracking-[0.25em]">
-                  <Zap size={14} className="fill-[#2563EB]" />
+                  <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="" className="w-4 h-4" />
                   <span>Welcome to the Academy</span>
                 </div>
                 <h1 className="text-4xl md:text-6xl font-black text-[#0F172A] tracking-tighter leading-tight max-w-2xl">
