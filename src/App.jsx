@@ -242,7 +242,7 @@ export default function App() {
       {/* Mobile Top Bar */}
       <header className="lg:hidden bg-white border-b border-slate-200 p-4 sticky top-0 z-50 flex justify-between items-center shadow-sm w-full">
         <div className="flex items-center gap-3">
-          <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="SparkLab" className="w-12 h-12" />
+          <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="SparkLab" className="w-24 h-24" />
           <div>
             <h1 className="font-bold text-lg text-[#1E293B] leading-tight">SparkLab</h1>
             <p className="text-[9px] text-blue-500 font-bold uppercase tracking-[0.2em]">Tech Academy</p>
@@ -262,7 +262,7 @@ export default function App() {
         <div className="flex flex-col h-full">
           <div className="p-6">
             <div className="flex items-center gap-3 mb-10 px-2 pt-2">
-              <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="SparkLab" className="w-12 h-12" />
+              <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="SparkLab" className="w-24 h-24" />
               <div>
                 <h1 className="text-base font-bold leading-tight tracking-tight">SparkLab</h1>
                 <p className="text-[9px] text-blue-400 font-bold uppercase tracking-[0.25em] opacity-80">Tech Academy</p>
